@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: farm-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: farm-backend
+  template:
+    metadata:
+      labels:
+        app: farm-backend
+    spec:
+      containers:
+        - name: backend
+          image: hashicorp/http-echo
+          args:
+            - "-text=Hello from Farm Backend"
+          ports:
+            - containerPort: 5678
