@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: farm-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: farm-frontend
+  template:
+    metadata:
+      labels:
+        app: farm-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: docker.io/nginx:latest
+          ports:
+            - containerPort: 80
