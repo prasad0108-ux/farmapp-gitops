@@ -1,3 +1,4 @@
+# Triggering ArgoCD sync by adding a comment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
